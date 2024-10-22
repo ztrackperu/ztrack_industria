@@ -40,7 +40,7 @@ async def Guardar_Datos(ztrack_data: dict) -> dict:
             print("Elemento encontrado")
         except ValueError:
             print("NO SE ENCONTRO CONTROL")
-    verificar_dispositivo = await dispositivos_collection.update_one({"imei": ztrack_data['i'],"estado":1},{"$set":{"ultimo_dato":fet}}) if Hay_dispositivo else await dispositivos_collection.insert_one({"imei":ztrack_data['i'],"estado":1,"fecha":fet})
+    verificar_dispositivo = await dispositivos_collection.update_one({"imei": ztrack_data['IMEI'],"estado":1},{"$set":{"ultimo_dato":fet}}) if Hay_dispositivo else await dispositivos_collection.insert_one({"imei":ztrack_data['IMEI'],"estado":1,"fecha":fet})
     #if control_encontrado['comando'] :
 
     return comando
