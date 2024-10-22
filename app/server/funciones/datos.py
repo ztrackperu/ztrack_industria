@@ -3,7 +3,7 @@ from server.database import collection ,collectionTotal
 from bson import regex
 from datetime import datetime,timedelta
 #from fastapi_pagination.ext.motor import paginate
-import mysql.connector
+#import mysql.connector
 
 
 def bd_gene(imei):
