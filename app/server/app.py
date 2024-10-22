@@ -5,11 +5,11 @@ from fastapi.middleware.cors import CORSMiddleware
 #from server.routes.usuarios import router as UsuariosRouter
 #from server.routes.madurador import router as MaduradorRouter
 from server.routes.datos import router as DatosRouter
-from server.routes.comando import router as ComandosRouter
-from server.routes.receta import router as RecetasRouter
-from server.routes.proceso import router as ProcesosRouter
-from server.routes.supervisado import router as SupervisadosRouter
-from server.routes.control import router as ControlRouter
+#from server.routes.comando import router as ComandosRouter
+#from server.routes.receta import router as RecetasRouter
+#from server.routes.proceso import router as ProcesosRouter
+#from server.routes.supervisado import router as SupervisadosRouter
+#from server.routes.control import router as ControlRouter
 
 app = FastAPI(
     title="Integracion ZTRACK API INDUSTRIA TEST",
