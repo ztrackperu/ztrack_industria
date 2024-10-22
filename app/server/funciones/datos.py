@@ -61,11 +61,7 @@ async def retrieve_datos_e():
         notificacions.append(notificacion)
     return notificacions
 
-def depurar_coincidencia(dato, datosDepurar=datosDepurar):
-    if dato in datosDepurar:
-        return None
-    else:
-        return dato
+
 
 def procesar_texto(texto):
     # Dividir el texto en partes separadas por "_"
