@@ -6,7 +6,7 @@ from fastapi.responses import JSONResponse
 from server.funciones.datos import (
     Guardar_Datos,
     retrieve_datos,
-    validar_comando,
+    #validar_comando,
     retrieve_datos_unico,
 )
 #Aqui importamos el modelo necesario para la clase 
