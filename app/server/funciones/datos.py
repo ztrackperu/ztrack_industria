@@ -62,6 +62,14 @@ async def retrieve_datos_e():
     return notificacions
 
 
+async def retrieve_datos_unico(imei: str):
+    notificacions = []
+    data_collection = collection(bd_gene(imei))
+    async for notificacion in data_collection.find({"estado":1},{"_id":0}).sort({"fecha_recepcion":-1}).limit(1):
+        #print(notificacion)
+        notificacions.append(notificacion)
+    return notificacions
+
 
 def procesar_texto(texto):
     # Dividir el texto en partes separadas por "_"

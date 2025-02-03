@@ -6,7 +6,8 @@ from fastapi.responses import JSONResponse
 from server.funciones.datos import (
     Guardar_Datos,
     retrieve_datos,
-   # validar_comando,
+    validar_comando,
+    retrieve_datos_unico,
 )
 #Aqui importamos el modelo necesario para la clase 
 from server.models.datos import (
@@ -32,6 +33,13 @@ async def add_data(datos: DatosSchema = Body(...)):
 @router.get("/{imei}", response_description="Datos recuperados")
 async def get_notificacions(imei:str):
     notificacions = await retrieve_datos(imei)
+    if notificacions:
+        return ResponseModel(notificacions, "Datos  recuperados exitosamente.")
+    return ResponseModel(notificacions, "Lista vacía devuelta")
+
+@router.get("/Live/{imei}", response_description="Datos recuperados")
+async def get_notificacions(imei:str):
+    notificacions = await retrieve_datos_unico(imei)
     if notificacions:
         return ResponseModel(notificacions, "Datos  recuperados exitosamente.")
     return ResponseModel(notificacions, "Lista vacía devuelta")
